@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# The Front End of the App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Running Locally
 
-## Available Scripts
+- This app will run locally on port 3000. Just run `npm i` and then `npm run start` to get it going
 
-In the project directory, you can run:
+## Testing
 
-### `yarn start`
+- There is no testing. This is what I would want to test in a front end app. fill this out later
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Improvements worth making
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Git pre-commit hook for linting
 
-### `yarn test`
+- This goes equally for the API, but I'll just note it here. If I had more time I'd like to enforce whatever style guide my team decides on at the commit stage. Thereby making the devs fix any inconsistencies before the code makes its way to remote.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Git pre-push hook for testing
 
-### `yarn build`
+- This goes equally for the API, but I'll just note it here. If I had more time I'd like to run the test suite against a feature branch before it gets pushed to remote. Best to catch any obvious failures early before we waste time deploying and having stakeholders/QA test in a sandbox env, or worse yet before the code makes its way to prod. This, of course, relies on a robust test suite which is absent here.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Git branch protections
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Once again, also applies to the API. Our master branch should have protections in place that require passing reviews from 1 or more (hopefully more) teammates before PRs can be merged into it.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Using a more fleshed out framework rather than barebones create react app
 
-### `yarn eject`
+- I ended up using create-react-app for the front end for much the same reason I used express-generator for the back end. And in much the same manner I could have used something like Next given more time and/or a true need for production readiness.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Error handling
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Right now errors are not being sent to the client and the client is not doing anything to alert users of what went wrong and how to rectify the situation. This is obviously quite bad. Users need to know. Further, we could set up logging with alerts to let us know via pager duty or what-have-you when we've made a bad prod release and broken an endpoint (or more).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Styling/UX
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- I'm good at following a mock or a brand/style guide and making my apps conform beautifully to someone more artistic's vision. Even if I had had a lot more time to work on this, I would probably not have made something significantly more beautiful on my own. So, in an ideal world I would make this pleasant to look at and easy to use in collaboration with a UX team. But hey, plain as it is at least it's already responsive!
