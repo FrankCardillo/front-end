@@ -6,7 +6,7 @@
 
 ## Testing
 
-- There is no testing. This is what I would want to test in a front end app. fill this out later
+- There is no testing as you can see. While TDD is important, in this case I prioritized delivering an MVP within a time box. For the front end I'd love to help grow a test suite that checks atomic behaviors of the various components. Not so much, "does this component return a `<div>`" as "does this function within the component perform the action I expect in a consistent and predictable manner" and "are my use cases for the component covered (including edge cases)."
 
 ## Improvements worth making
 
